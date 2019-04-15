@@ -3,11 +3,16 @@
 function getPagges(){
 	var pages=["give"];
 			chrome.runtime.sendMessage({greeting: pages}, function(response) {
-			  console.log(pageData);
+			  console.log(response.farewell);
+			  console.log(4444);
+				
 			  pageData = response.farewell;
+			  $(".pages-block").html('');
 			  for(var key=0; key < response.farewell.length; key++){
-					$(".pages-block").html('url: ' + response.farewell[key].url + '<br> loadedDOMPage: ' + response.farewell[key].loadedDOMPage + '<br> onloadWindow: ' + response.farewell[key].onloadWindow + '<br> cookies: ' + response.farewell[key].cookies + '<br><br>');	
+				  if(response.farewell[key].url !== ''){
+					$(".pages-block").html($(".pages-block").html()+'['+key+']<br>url: ' + response.farewell[key].url + '<br> loadedDOMPage: ' + response.farewell[key].loadedDOMPage + '<br> onloadWindow: ' + response.farewell[key].onloadWindow + '<br> cookies: ' + response.farewell[key].cookies + '<br><br>');	
 				}
+			  }
 			});
 }
 
@@ -18,8 +23,9 @@ function getPagges(){
 			var urlInput=$('.urlInput').val();
 			
 			console.log(pageData);
+			console.log(122);
 			$.ajax({
-				dataType: "json",
+			  dataType: "json",
 			  method: "POST",
 			  url: urlInput,
 			  data: pageData

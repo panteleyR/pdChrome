@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Tproger Media Quick Launcher</title>
+   <!--ссылаемся на шрифты, используемые в документе-->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+   <!--здесь мы ссылаемся на стили, которые будем использовать в документе, а именно стиль иконок-->
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    /* Модальная структура документа */
+    /*общие настройки для всего документа*/
+    html,
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      margin: 0;
+      min-height: 180px;
+      padding: 0;
+      width: 380px;
+	  min-width:780px;
+    }
+    /*задаём настройки для заголовков первого уровня*/
+    h1 {
+      font-family: 'Menlo', monospace;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0;
+      color: #2f5876;
+    }
+    a:link,
+    a:visited {
+      color: #000000;
+      outline: 0;
+      text-decoration: none;
+    }
+    /*задаём ширину картинки*/
+    img {
+      width: 30px; /*ширина изображений*/
+    }
+    .modal-header {
+      align-items: center; /*выравнивание элементов по центру*/
+      border-bottom: 0.5px solid #dadada; /*свойства нижней разделительной линии*/
+      height: 50px;
+    }
+    .modal-content {
+      padding: 0 22px; /*отступы сверху и снизу, сверху и слева*/
+    }
+    .modal-icons {
+      border-top: 0.5px solid #dadada; /*свойства верхней разделительной линии*/
+      height: 50px;
+      width: 100%;
+    }
+    .logo {
+      padding: 16px; /*отступы со всех сторон*/
+    }
+    .logo-icon {
+      vertical-align: text-bottom; /*выравнивание по нижней части текста*/
+      margin-right: 12px; /*задётся отступ элементов от изображения*/
+    }
+    .version {
+      color: #444;
+      font-size: 18px;
+    }.flex-container {
+      display: flex; /*отображает контейнер в виде блочного элемента*/
+      justify-content: space-between; /*равномерное выравнивание элементов*/
+      padding: 10px 22px;
+    }
+    /*задаём настройки для контейнеров с иконками*/
+    .flex {
+      opacity: 1; /*параметр непрозрачности иконок*/
+      width: 120px;
+    }
+    .flex:hover {
+      opacity: 0.4; /*уровень непрозрачности при наведении курсора на элемент*/
+    }
+    .flex .fa {
+      font-size: 40px;
+      color: #2f5876;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+<body >
+	<div class="modal-header">
+		<h1 class="logo">
+		  <!--<img class="logo-icon" src="images/tproger-logo.png"> -->
+		  Запускатор Tproger
+		  <span class="version">(1.0.0)</span>
+	   </h1>
+	</div>
+	<div class="modal-content">
+    <p>Быстрый доступ к контентным площадкам Типичного Программиста</p>
+	<!-- 
+	https://www.google.com/webhp?igu=1
+	https://www.google.com/search?igu=1&source=hp&ei=YKlUXIv9H8GbsgHz8YWYBQ&q=%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA&btnK=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA+%D0%B2+Google&oq=%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA&gs_l=psy-ab.3...0.0..63463...0.0..0.0.0.......0......gws-wiz.
+	-->
+	<div><iframe id="MainPopupIframe" style="width:100%; height: 400px" src="https://www.google.com/search?igu=1&source=hp&ei=YKlUXIv9H8GbsgHz8YWYBQ&q=%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA&btnK=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA+%D0%B2+Google&oq=%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA&gs_l=psy-ab.3...0.0..63463...0.0..0.0.0.......0......gws-wiz." frameborder="0"></iframe></div>
+  </div>
+  
+  
+  
+  
+   <div class="modal-icons">
+    <div class="flex-container">
+      <div class="flex">
+        <!--target="_blank" — это служит для открытия новой вкладки при клике по иконке-->
+        <a href="#" target="_blank">
+          <i class="fa fa-globe"></i>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="#" target="_blank">
+          <i class="fa fa-telegram"></i>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="#" target="_blank">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="#" target="_blank">
+          <i class="fa fa-vk"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
